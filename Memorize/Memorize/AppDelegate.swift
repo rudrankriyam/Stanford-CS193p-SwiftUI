@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Memorize
 //
-//  Created by Rudrank Riyam on 19/05/20.
+//  Created by Rudrank Riyam on 31/10/20.
 //  Copyright © 2020 Rudrank Riyam. All rights reserved.
 //
 
