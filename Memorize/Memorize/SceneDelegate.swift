@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Memorize
 //
-//  Created by Rudrank Riyam on 19/05/20.
+//  Created by Rudrank Riyam on 31/10/20.
 //  Copyright © 2020 Rudrank Riyam. All rights reserved.
 //
 
@@ -13,7 +13,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        let contentView = ContentView()
+        let viewModel = EmojiMemoryGame()
+        let contentView = EmojiMemoryGameView(viewModel: viewModel)
 
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
