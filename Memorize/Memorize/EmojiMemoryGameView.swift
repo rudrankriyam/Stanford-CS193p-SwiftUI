@@ -20,8 +20,12 @@ struct EmojiMemoryGameView: View {
             }
         }
         .padding()
-        .font(.largeTitle)
+        .font(cardsCount > 4 ? .title : .largeTitle)
         .foregroundColor(.orange)
+    }
+
+    var cardsCount: Int {
+        viewModel.cards.count
     }
 }
 
