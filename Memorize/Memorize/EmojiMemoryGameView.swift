@@ -20,7 +20,6 @@ struct EmojiMemoryGameView: View {
             }
         }
         .padding()
-        .font(cardsCount > 4 ? .title : .largeTitle)
         .foregroundColor(.orange)
     }
 

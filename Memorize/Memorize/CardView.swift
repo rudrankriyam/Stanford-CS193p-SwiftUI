@@ -10,17 +10,33 @@ import SwiftUI
 
 struct CardView: View {
     var card: MemoryGame<String>.Card
-    
+
+    // MARK:- Drawing Constants
+
+    let cornerRadius: CGFloat = 12
+    let edgeLineWidth: CGFloat = 2
+
     var body: some View {
+        GeometryReader { geometry in
+            body(for: geometry.size)
+        }
+    }
+
+    func body(for size: CGSize) -> some View {
         ZStack {
             if card.isFaceUp {
-                RoundedRectangle(cornerRadius: 12).stroke(lineWidth: 2)
+                RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth)
                 Text(card.content)
             } else {
-                RoundedRectangle(cornerRadius: 12).fill(Color.orange)
+                RoundedRectangle(cornerRadius: cornerRadius).fill(Color.orange)
             }
         }
+        .font(.system(size: fontSize(for: size)))
         .aspectRatio(2/3, contentMode: .fit)
+    }
+
+    func fontSize(for size: CGSize) -> CGFloat {
+        min(size.width, size.height) * 0.8
     }
 }
 
